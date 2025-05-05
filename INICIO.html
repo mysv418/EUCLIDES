@@ -1,0 +1,294 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galería</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color:   #202c2c ;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: #616149;
+      position: relative;
+    }
+
+ .logo {
+  font-size: 2rem;
+  font-family: 'Pacifico', cursive;
+  margin-left: 10px;
+  color: #ffffff;
+}
+
+    .menu-icon {
+      font-size: 2rem;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: black;
+      width: 200px;
+      height: 100%;
+      padding-top: 2rem;
+    }
+
+    .menu a {
+      color: white;
+      display: block;
+      text-decoration: none;
+      padding: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .menu a:hover {
+      background-color: #444;
+    }
+
+    .close-menu {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
+      color: #000000;
+      cursor: pointer;
+    }
+
+    .container {
+      padding: 1rem;
+    }
+
+h1 {
+  font-size: 2.5rem;
+  font-family: 'Great Vibes', cursive;
+  margin-left: 10px;
+  color: white;
+}
+
+p {
+  font-size: 2rem;
+  font-family: 'Great Vibes', cursive;
+  margin-left: 10px;
+  color: white;
+}
+
+    .btn {
+      width: 60px;
+      height: 60px;
+      background:;
+      color: #000000;
+      border-radius: 10px;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 2rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 0rem;
+      cursor: pointer;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.9);
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      flex-direction: column;
+    }
+
+    .modal img {
+      max-height: 90vh;
+      max-width: 90vw;
+      border-radius: 0rem;
+    }
+
+    .close, .prev, .next {
+      position: absolute;
+      color: white;
+      background: rgba(0,0,0,0.6);
+      padding: 0.6rem 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      user-select: none;
+      border: none;
+    }
+
+    .close {
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
+      border-radius: 10px;
+    }
+
+    .prev, .next {
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 10px;
+    }
+
+    .prev {
+      left: 1rem;
+    }
+
+    .next {
+      right: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">MAICOL SANTOS V</div>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+  </header>
+
+  <div class="menu" id="menu">
+    <button class="close-menu" onclick="closeMenu()">×</button>
+    <a href="#">Inicio</a>
+    <a href="#">Galería</a>
+    <a href="#">Servicios</a>
+    <a href="#">Contactos</a>
+  </div>
+
+  <div class="container">
+    <h1>Bienvenidos</h1>
+    <p>Este es mi galería saludos.</p>
+    <button class="btn">VER</button>
+
+    <div class="gallery">
+      <img src="https://img.freepik.com/foto-gratis/nina-feliz-sorprendida-apuntando-izquierda-recomendar-publicidad-producto-hacer-gesto-bien_176420-20191.jpg?t=st=1744857786~exp=1744861386~hmac=a5df53cd5986da727c0e622a758b7bcc6321be70ef07497f0bcfd82ed7e444c4&w=740" alt="1">
+      <img src="https://img.freepik.com/foto-gratis/retrato-elegante-chica-glam-gafas-sol-riendo-sonriendo-pie-sobre-fondo-rosa-vacaciones_1258-86148.jpg?ga=GA1.1.1676092149.1742079199&semt=ais_hybrid&w=740" alt="2">
+      <img src="https://img.freepik.com/fotos-premium/mujer-labios-rojos-sombrero-plumas-rojas_1221901-928.jpg?ga=GA1.1.1676092149.1742079199&semt=ais_hybrid&w=740" alt="3">
+      <img src="https://img.freepik.com/foto-gratis/retrato-mujer-bonita-gafas-sol-sombrero-sobre-pared-colorida-azul_231208-545.jpg?ga=GA1.1.1676092149.1742079199&semt=ais_hybrid&w=740" alt="4">
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="imageModal">
+    <button class="close" onclick="closeModal()">×</button>
+    <button class="prev" onclick="prevImage()">❮</button>
+    <img id="modalImg" src="" alt="">
+    <button class="next" onclick="nextImage()">❯</button>
+  </div>
+
+  <script>
+    
+    
+    
+    const images = document.querySelectorAll('.gallery img');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    let currentIndex = 0;
+
+    images.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        currentIndex = index;
+        openModal(img.src);
+      });
+    });
+
+    function openModal(src) {
+      modal.style.display = 'flex';
+      modalImg.src = src;
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      modalImg.src = images[currentIndex].src;
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      modalImg.src = images[currentIndex].src;
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (modal.style.display !== 'flex') return;
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'ArrowRight') nextImage();
+    });
+
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function closeMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = 'none';
+    }
+    
+    
+    
+    
+    
+    
+    
+// Función para deshabilitar la tecla de impresión de pantalla
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'PrintScreen') {
+        e.preventDefault(); // Previene la acción de captura
+        alert('La captura de pantalla está deshabilitada en esta página.');
+    }
+});
+
+// Función para deshabilitar el clic derecho
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault(); // Previene el menú contextual
+    alert('El clic derecho está deshabilitado en esta página.');
+});
+
+// Mostrar la capa de protección cuando se detecte una acción sospechosa
+document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+        // Cuando el usuario minimiza la página o la oculta, mostramos la capa
+        document.querySelector('.overlay').style.display = 'block';
+    } else {
+        // Cuando la página vuelve a estar visible, ocultamos la capa
+        document.querySelector('.overlay').style.display = 'none';
+    }
+});
+
+// Detectar la activación de la pantalla completa
+document.addEventListener('fullscreenchange', function () {
+    if (document.fullscreenElement) {
+        // Si se activa la pantalla completa, mostramos la capa de protección
+        document.querySelector('.overlay').style.display = 'block';
+    } else {
+        // Si se desactiva la pantalla completa, ocultamos la capa
+        document.querySelector('.overlay').style.display = 'none';
+    }
+});
+  </script>
+</body>
+</html>
