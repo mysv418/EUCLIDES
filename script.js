@@ -1,5 +1,5 @@
 
-  <script>
+  
     
     
     
@@ -92,4 +92,4 @@ document.addEventListener('fullscreenchange', function () {
         document.querySelector('.overlay').style.display = 'none';
     }
 });
-  </script>
+  
