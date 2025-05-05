@@ -1,7 +1,18 @@
-   
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@font-face {
+    font-family: 'La Beauties';
+    src: url('fonts/LaBeauties.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
-    body {
+  .la-beauties {
+    font-family: 'La Beauties', cursive;
+    font-size: 36px;
+  }
+
+
+
+        body {
       margin: 0;
       font-family: 'Georgia', serif;
       background-color:   #202c2c ;
