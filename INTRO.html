@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Euclides Grover</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://raw.githubusercontent.com/mysv418/EUCLIDES/refs/heads/main/IMAGENES/InShot_20250505_214321624.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .contenido {
+      background: #ffffff00;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      margin-top: 300px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .bloque-derecha {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .texto {
+      margin: 0 0 0px 0;
+      text-align: right;
+      color: #ff0202;
+      font-weight: bold;
+      background-color: black;
+      font-size: 24px;
+    }
+
+    .boton-imagen {
+      align-self: flex-end;
+      margin-right: 35px;
+    }
+
+    .boton-imagen button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .boton-imagen img {
+      width: 70px;
+      height: auto;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="contenido">
+    <div class="bloque-derecha">
+      <p class="texto">Haz clic aquí</p>
+      <div class="boton-imagen">
+        <button onclick="alert('¡Has hecho clic en el botón!')">
+          <img src="https://raw.githubusercontent.com/mysv418/EUCLIDES/refs/heads/main/IMAGENES/1746496478573.png" alt="Botón">
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
