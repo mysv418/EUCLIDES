@@ -1,0 +1,90 @@
+ <!-- menu.html -->
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .menu-icon {
+    font-size: 26px;
+    cursor: pointer;
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    gap: 20px;
+    background-color: #444;
+    padding: 10px 20px;
+  }
+
+  .menu a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .close-menu {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .menu {
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #444;
+      display: none;
+    }
+
+    .menu.show {
+      display: flex;
+    }
+
+    .menu-icon {
+      display: block;
+    }
+
+    .close-menu {
+      display: block;
+      background: none;
+      color: white;
+      font-size: 24px;
+      border: none;
+      align-self: flex-end;
+    }
+  }
+</style>
+
+<header>
+  <div class="logo">MAICOL SANTOS V</div>
+  <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+</header>
+
+<div class="menu" id="menu">
+  <button class="close-menu" onclick="closeMenu()">×</button>
+  <a href="#">Inicio</a>
+  <a href="#">Galería</a>
+  <a href="#">Servicios</a>
+  <a href="#">Contactos</a>
+</div>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('menu').classList.toggle('show');
+  }
+
+  function closeMenu() {
+    document.getElementById('menu').classList.remove('show');
+  }
+</script>
