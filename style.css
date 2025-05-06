@@ -66,13 +66,13 @@
 h1 {
       font-style: italic;     /* Texto inclinado */
       color: #ffffff;         /* Color del texto */
-      font-size: 40px;        /* Tamaño del texto */
+      font-size: 30px;        /* Tamaño del texto */
     }
 
 p {
       font-style: italic;     /* Texto inclinado */
       color: #ffffff;         /* Color del texto */
-      font-size: 40px;        /* Tamaño del texto */
+      font-size: 20px;        /* Tamaño del texto */
     }
 
     .btn {
