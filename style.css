@@ -16,11 +16,10 @@
     }
 
  .logo {
-  font-size: 2rem;
-  font-family: 'Pacifico', cursive;
-  margin-left: 10px;
-  color: #ffffff;
-}
+      font-style: italic;     /* Texto inclinado */
+      color: #ffffff;         /* Color del texto */
+      font-size: 40px;        /* Tamaño del texto */
+    }
 
     .menu-icon {
       font-size: 2rem;
