@@ -101,7 +101,7 @@ document.addEventListener('fullscreenchange', function () {
 
  <!-- Script para cargar el menú -->
   
-    fetch('menu.html')
+    fetch('MENU.html')
       .then(response => response.text())
       .then(html => {
         document.getElementById('menu-container').innerHTML = html;
