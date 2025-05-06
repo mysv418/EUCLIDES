@@ -93,3 +93,16 @@ document.addEventListener('fullscreenchange', function () {
     }
 });
   
+
+
+
+
+
+
+ <!-- Script para cargar el menú -->
+  
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('menu-container').innerHTML = html;
+      });
