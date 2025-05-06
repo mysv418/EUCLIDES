@@ -72,7 +72,7 @@ h1 {
 p {
       font-style: italic;     /* Texto inclinado */
       color: #ffffff;         /* Color del texto */
-      font-size: 20px;        /* Tamaño del texto */
+      font-size: 15px;        /* Tamaño del texto */
     }
 
     .btn {
