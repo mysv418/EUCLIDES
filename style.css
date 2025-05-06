@@ -77,18 +77,16 @@
     }
 
 h1 {
-  font-size: 2.5rem;
-  font-family: 'Great Vibes', cursive;
-  margin-left: 10px;
-  color: white;
-}
+      font-style: italic;     /* Texto inclinado */
+      color: #ffffff;         /* Color del texto */
+      font-size: 40px;        /* Tamaño del texto */
+    }
 
 p {
-  font-size: 2rem;
-  font-family: 'Great Vibes', cursive;
-  margin-left: 10px;
-  color: white;
-}
+      font-style: italic;     /* Texto inclinado */
+      color: #ffffff;         /* Color del texto */
+      font-size: 40px;        /* Tamaño del texto */
+    }
 
     .btn {
       width: 60px;
