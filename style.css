@@ -155,7 +155,14 @@ p {
     }
   
 
-
+   .aviso {
+      background: linear-gradient(145deg, #2a2a2a00, #1c1c1c00);
+      border-radius: 10px;
+      padding: 15px 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      max-width: 400px;
+      margin: 0 auto;
+    }
 
 
 .aviso h2 {
