@@ -154,3 +154,23 @@ p {
       right: 1rem;
     }
   
+
+
+.aviso {
+      background-color: #1e1e1e;
+      border-left: 6px solid #ff5252;
+      padding: 20px 30px;
+      box-shadow: 0 0 10px #000;
+      max-width: 600px;
+    }
+
+    .aviso h2 {
+      color: #ff5252;
+      margin-top: 0;
+    }
+
+    .aviso p {
+      margin: 10px 0 0;
+      font-size: 1.1em;
+color: #ffffff;
+    }
