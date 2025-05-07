@@ -156,15 +156,7 @@ p {
   
 
 
-.aviso {
-      background: linear-gradient(145deg, #2a2a2a, #1c1c1c);
-      border-radius: 10px;
-      padding: 20px 25px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    
+
 
 .aviso h2 {
   font-style: normal;    /* Texto normal, sin inclinación */
