@@ -157,13 +157,13 @@ p {
 
 
 .aviso {
-      background-color: #1e1e1e;
-      border-left: 6px solid #ff5252;
-      padding: 20px 30px;
-      box-shadow: 0 0 10px #000;
+      background: linear-gradient(145deg, #2a2a2a, #1c1c1c);
+      border-radius: 10px;
+      padding: 20px 25px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
       max-width: 600px;
+      margin: 0 auto;
     }
-
     
 
 .aviso h2 {
