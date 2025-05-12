@@ -21,7 +21,12 @@
     <h1>Bienvenidos</h1>
     <p>La fotografía es la parte de la vida donde se congelan los momentos para siempre y dan esa sensación de volver a ese momento mágico.</p>
     
-<iframe src="https://euclides76.wordpress.com/" width="40" height="10" style="border:none;"></iframe>
+<div style="position: relative; width: 40px; height: 10px;">
+  <iframe src="https://euclides76.wordpress.com/" width="40" height="10" style="border:none;"></iframe>
+  <div id="overlay" onclick="this.style.display='none';"
+       style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+              background-color: black; cursor: pointer;"></div>
+</div>
    
     <div class="gallery">
        <img src="https://i.postimg.cc/R4CyP1cs/20200723-155545modelo-01.jpg?dl=1" alt="imagen">
