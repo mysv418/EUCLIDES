@@ -42,14 +42,18 @@
     });
 
     function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-    }
+  const menu = document.getElementById('menu');
+  const isVisible = menu.style.display === 'block';
 
-    function closeMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = 'none';
-    }
+  menu.style.display = isVisible ? 'none' : 'block';
+  document.body.style.overflow = isVisible ? 'auto' : 'hidden'; // Bloquea o permite scroll
+}
+
+function closeMenu() {
+  const menu = document.getElementById('menu');
+  menu.style.display = 'none';
+  document.body.style.overflow = 'auto'; // Restaura scroll
+}
     
     
     
